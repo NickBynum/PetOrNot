@@ -1,0 +1,26 @@
+{
+  "name": "petornot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "debug": "node index.js",
+    "start": "node index.js",
+    "dev": "node index.js",
+    "setup": "npm install"
+  },
+  "author": "Boise Codeworks",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.1",
+    "dotenv": "^8.1.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "mongoose": "^5.8.0"
+  },
+  "engines": {
+    "node": "^12.0.0",
+    "npm": "^6.9.0"
+  }
+}
