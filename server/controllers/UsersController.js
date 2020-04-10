@@ -1,11 +1,11 @@
 import express from "express";
 import BaseController from "../utils/BaseController";
-import { postsService } from "../services/PostService";
+import { usersService } from "../services/UserService";
 import { BadRequest } from "../utils/Errors";
 
-export class PostsController extends BaseController {
+export class UsersController extends BaseController {
   constructor() {
-    super("api/posts");
+    super("api/users");
     this.router
       .get("", this.getAll)
       .get("/:Id", this.getById)
@@ -17,8 +17,8 @@ export class PostsController extends BaseController {
   // SECTION Get request functions
   async getAll(_, res, next) {
     try {
-      let posts = await postsService.getAll();
-      res.send(posts);
+      let users = await usersService.getAll();
+      res.send(users);
     } catch (error) {
       next(error);
     }
@@ -26,11 +26,11 @@ export class PostsController extends BaseController {
 
   async getById(req, res, next) {
     try {
-      let post = await postsService.getById(req.params.Id);
-      if (!post) {
+      let user = await usersService.getById(req.params.Id);
+      if (!user) {
         throw new BadRequest("Id");
       }
-      res.send(post);
+      res.send(user);
     } catch (error) {
       next(error);
     }
@@ -42,8 +42,8 @@ export class PostsController extends BaseController {
 
   async edit(req, res, next) {
     try {
-      let post = await postsService.edit(req.params.Id, req.body);
-      res.send(post);
+      let user = await usersService.edit(req.params.Id, req.body);
+      res.send(user);
     } catch (error) {
       next(error);
     }
@@ -51,26 +51,26 @@ export class PostsController extends BaseController {
 
   // !SECTION End put request functions
 
-  // SECTION Post request functions
+  // SECTION User request functions
 
   async create(req, res, next) {
     try {
-      let post = await postsService.create(req.body);
-      res.send(post);
+      let user = await usersService.create(req.body);
+      res.send(user);
       //res.send(req.body);
     } catch (error) {
       next(error);
     }
   }
 
-  // !SECTION End Post request functions
+  // !SECTION End User request functions
 
   // SECTION Delete request functions
 
   async remove(req, res, next) {
     try {
-      let post = await postsService.remove(req.params.Id);
-      res.send(post);
+      let user = await usersService.remove(req.params.Id);
+      res.send(user);
     } catch (error) {
       next(error);
     }
