@@ -5,16 +5,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/style.css">
     <link rel="stylesheet" href="assets/style.css">
     <title>Pet or Pass</title>
 </head>
 
 <body>
 
-    <h1>hello client</h1>
+    <header class="container">
+        <div class="row">
+            </div>
+            <div class="col-12">
+                <nav class="navbar navbar-light bg-light">
+                    <form class="form-inline">
+                        <a class="#">Logo</a>
+                        <button class="btn btn-sm btn-primary" type="button">Post Your Pet</button>
+                    </form>
+                </nav>
+        </div>
+    </header>
+    <!-- The beginning login when user enters their name -->
+
+    <body class="container">
+        <div class="row">
+            <div class="col-12">
+                <div id="loginForm">
+                    <form class="form-inline" onsubmit="app.listController.join(event)">
+                        <input type="text" class="form-control mb-2 mr-sm-2" name="userName"
+                            placeholder="Enter Your Username">
+                        <button type="submit" class="btn btn-primary mb-2">Join</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- this is the upload form  -->
+        <div class="col-3 border border-dark bg-light rounded shadow mx-2">
+            <button type="button" class="close text-danger" onclick="app.postsController.delete('${this.id}')">
+                <span>&times;</span>
+            </button>
+            <label class="bg-warning text-dark w-100">
+                <h3>Post Your Pet</h3>
+            </label>
+            <form onsubmit="app.postsController.addPet(xxxxxxx??)">
+                <div class="form-group">
+                    <input type="text" name="userName" class="form-control" placeholder="Enter Username">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="petName" class="form-control" placeholder="Enter Pet Name">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="petCaption" class="form-control" placeholder="Enter Winning Caption">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="petUrl" class="form-control" placeholder="Enter Pet Pic Url">
+                </div>
+            </form>
+            <button type="submit" class="btn btn-primary mb-2">Post Pet</button>
+        </div>
+
+        <!-- This is the card output -->
+        <div class="row">
+            <div class="col-12">
+                <div id="petCardOutput" class="card" style="width: 18rem;">
+                    <img src="//place-hold.it/300x300" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div><button class="btn btn-success">Pet</button><button class="btn btn-danger">Pet</button>
+                        </div>
+                        <p class="card-text">My cat Fluffy is the bestest ever!!!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Output that includes all comments -->
+        <!-- This is the card output -->
+        <div class="row">
+            <div class="col-12">
+                <div id="petCardOutput" class="card" style="width: 18rem;">
+                    <img src="//place-hold.it/300x300" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div><button class="btn btn-success">Pet</button><button class="btn btn-danger">Pet</button>
+                        </div>
+                        <h5 class="card-text">My cat Fluffy is the bestest ever!!!</h5>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label for="commentTextArea">Submit a comment</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </form>
+                    <div>
+                        <p>User Post - Yes your pet is awesome!</p>
+                    </div>
+                </div>
+            </div>
+    </body>
 
 
+    <footer class="container">
+        <div class="row m-5">
+            <div class="col-12 sticky-bottom">
+                <p>placeholder for a basic footer</p>
+            </div>
+        </div>
+    </footer>
 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS, then Axios -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="/app/main.js"></script>
     <script src="app/main.js" type="module"></script>
 </body>
 
