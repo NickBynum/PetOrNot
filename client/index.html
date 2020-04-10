@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/style.css">
-    <link rel="stylesheet" href="assets/style.css">
     <title>Pet or Pass</title>
 </head>
 
@@ -28,18 +27,18 @@
     </header>
     <!-- The beginning login when user enters their name -->
 
-    <body class="container">
+    <!-- <body class="container">
         <div class="row">
             <div class="col-12">
                 <div id="loginForm">
-                    <form class="form-inline" onsubmit="app.listController.join(event)">
+                    <form class="form-inline" onsubmit="client.app.listController.join(event)">
                         <input type="text" class="form-control mb-2 mr-sm-2" name="userName"
                             placeholder="Enter Your Username">
                         <button type="submit" class="btn btn-primary mb-2">Join</button>
                     </form>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- this is the upload form  -->
         <div class="col-3 border border-dark bg-light rounded shadow mx-2">
             <button type="button" class="close text-danger" onclick="app.postsController.delete('${this.id}')">
@@ -48,21 +47,21 @@
             <label class="bg-warning text-dark w-100">
                 <h3>Post Your Pet</h3>
             </label>
-            <form onsubmit="app.postsController.addPet(xxxxxxx??)">
+            <form onsubmit="app.postsController.addPet(event)">
                 <div class="form-group">
-                    <input type="text" name="userName" class="form-control" placeholder="Enter Username">
+                    <input type="text" name="title" class="form-control" placeholder="Enter Title">
                 </div>
                 <div class="form-group">
                     <input type="text" name="petName" class="form-control" placeholder="Enter Pet Name">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="petCaption" class="form-control" placeholder="Enter Winning Caption">
+                    <input type="text" name="description" class="form-control" placeholder="Enter Winning Caption">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="petUrl" class="form-control" placeholder="Enter Pet Pic Url">
+                    <input type="text" name="imgUrl" class="form-control" placeholder="Enter Pet Pic Url">
                 </div>
+                <button type="submit" class="btn btn-primary mb-2">Post Pet</button>
             </form>
-            <button type="submit" class="btn btn-primary mb-2">Post Pet</button>
         </div>
 
         <!-- This is the card output -->
@@ -125,8 +124,8 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="module" src="/app/main.js"></script>
-    <script src="app/main.js" type="module"></script>
+    <script src="/app/main.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 
 </html>
