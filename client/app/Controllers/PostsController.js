@@ -11,30 +11,19 @@ export default class PostsController {
 
   addPet (event) {
     event.preventDefault()
-    debugger
     let form = event.target;
     let newPetObject = {
-      imgUrl: form.petUrl.value,
-      title: form.title.value,
-      userName: form.userName.value
+      imgUrl: form.imgUrl.value,
+      title: form.title.value, 
+      petName: form.petName.value,
+      description: form.description.value
     }
-    console.log(event.target)
     
     postsService.addPet(newPetObject)
+    console.log("petObject", newPetObject)
     form.reset()
+    
   }
-
-
-
-
-
-
-
-
-
-
-
-
 
   constructor() {
     store.subscribe("posts", _postDraw);
