@@ -1,7 +1,10 @@
 import store from "../store.js";
 import post from "../Models/Post.js"
 
-class ValuesService {}
+class PostsService {
 
-const service = new ValuesService();
+
+}
+
+const service = new PostsService();
 export default service;
