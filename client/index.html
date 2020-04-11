@@ -11,20 +11,23 @@
     <title>Pet or Pass</title>
 </head>
 
-<body>
+<body class="container-fluid">
 
-    <header class="container">
-        <div class="row">
-            </div>
+        <nav class="navbar dark-blue ">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/pet-friendly.png"
+                    width="40" height="40" alt=""></img></a> 
+                <div><button class="btn btn-sm light-blue text-light ml-auto" type="button">Post Your Pet</button></div>
+        </nav>
+
+
+
+        <div class="row ">
             <div class="col-12">
-                <nav class="navbar navbar-light bg-light">
-                    <form class="form-inline">
-                        <a class="#">Logo</a>
-                        <button class="btn btn-sm btn-primary" type="button">Post Your Pet</button>
-                    </form>
-                </nav>
+                
         </div>
-    </header>
+    </div>
+
     <!-- The beginning login when user enters their name -->
 
     <!-- <body class="container">
@@ -40,11 +43,11 @@
             </div>
         </div> -->
         <!-- this is the upload form  -->
-        <div class="col-3 border border-dark bg-light rounded shadow mx-2">
+        <div class="col-3 border border-dark dark-grey rounded shadow mx-2">
             <button type="button" class="close text-danger" onclick="app.postsController.delete('${this.id}')">
                 <span>&times;</span>
             </button>
-            <label class="bg-warning text-dark w-100">
+            <label class="dark-blue text-light text-center w-100">
                 <h3>Post Your Pet</h3>
             </label>
             <form onsubmit="app.postsController.addPet(event)">
@@ -60,19 +63,18 @@
                 <div class="form-group">
                     <input type="text" name="imgUrl" class="form-control" placeholder="Enter Pet Pic Url">
                 </div>
-                <button type="submit" class="btn btn-primary mb-2">Post Pet</button>
+                <button type="submit" class="btn light-blue text-light  mb-2">Submit</button>
             </form>
         </div>
 
         <!-- This is the card output -->
         <div class="row">
             <div class="col-12">
-                <div id="petCardOutput" class="card" style="width: 18rem;">
+                <div id="petCardOutput" class="card border-dark rounded shadow mx-2 my-2 " style="width: 18rem;">
                     <img src="//place-hold.it/300x300" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div><button class="btn btn-success">Pet</button><button class="btn btn-danger">Pet</button>
-                        </div>
-                        <p class="card-text">My cat Fluffy is the bestest ever!!!</p>
+                    <div class="card-body rounded off-white">
+                    <h5 class="card-text">Cats rule, dogs drool</h5>
+                    <div><button class="btn light-blue text-light mr-2">Pet</button><button class="btn purple text-light ">Pass</button></div>
                     </div>
                 </div>
             </div>
@@ -82,26 +84,30 @@
         <!-- This is the card output -->
         <div class="row">
             <div class="col-12">
-                <div id="petCardOutput" class="card" style="width: 18rem;">
+                <div id="petCardOutput" class="card border-dark rounded shadow mx-2 my-2" style="width: 18rem;">
                     <img src="//place-hold.it/300x300" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div><button class="btn btn-success">Pet</button><button class="btn btn-danger">Pet</button>
+                    <div class="card-body rounded off-white">
+                        <h5 class="card-text">Cats rule, dogs drool</h5>
+                        <div><button class="btn light-blue text-light mr-2">Pet</button><button class="btn purple text-light ">Pass</button></div>
+
+                        <form onsubmit="xxxxxxx">
+                            <div class="form-group pt-3">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Add a comment..."></textarea>
+                            </div>
+                            <!-- do we even need this button? form is "on submit" already.... -->
+                            <button class="btn light-blue text-light" type="submit">Submit</button>
+                          </form>
+
+                        <!-- this will need to be a second part of a template, only draws if there is a comment. Comments need to be in an unordered list -->
+                        <div>
+                            <p>User Post - Yes your pet is awesome!</p>
                         </div>
-                        <h5 class="card-text">My cat Fluffy is the bestest ever!!!</h5>
                     </div>
-                    <form>
-                        <div class="form-group">
-                            <label for="commentTextArea">Submit a comment</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
-                        <button class="btn btn-primary" type="submit">Submit</button>
-                    </form>
-                    <div>
-                        <p>User Post - Yes your pet is awesome!</p>
-                    </div>
+
+
                 </div>
             </div>
-    </body>
+
 
 
     <footer class="container">
