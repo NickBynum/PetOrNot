@@ -14,6 +14,19 @@ class PostsService {
       store.commit("posts", posts);
     });
   }
+
+  // getCommentsByPostId(postId) {
+  //   debugger;
+  //   _api.get(postId + "/comments").then((res) => {
+  //     console.log("comments", res);
+  //     store.commit("messages", res);
+  //     let comments = res.data.map(
+  //       (rawCommentData) => new Comment(rawCommentData)
+  //     );
+  //     store.commit("comments", comments);
+  //   });
+  // }
+
   async addPost(newPostObject) {
     console.log(newPostObject);
     try {

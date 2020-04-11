@@ -1,5 +1,5 @@
 import store from "../store.js";
-import comment from "../Models/Comment.js"
+import Comment from "../Models/Comment.js";
 
 // @ts-ignore
 const _api = axios.create({
@@ -10,11 +10,15 @@ const _api = axios.create({
 class CommentsService {
   getComments() {
     _api.get().then((res) => {
-      let comments = res.data.map((rawCommentData) => new Comment(rawCommentData));
+      console.log("results", res.data);
+      let comments = res.data.map(
+        (rawCommentData) => new Comment(rawCommentData)
+      );
       store.commit("comments", comments);
+      console.log("comments", comments);
     });
   }
- async comment(newCommentObject) {
+  async comment(newCommentObject) {
     console.log(newCommentObject);
     try {
       await _api.post("", newCommentObject);
