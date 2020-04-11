@@ -8,8 +8,8 @@ const Post = new Schema(
     title: { type: String, required: true },
     petName: { type: String, required: true },
     description: { type: String, required: true },
-    userId: { type: ObjectId, ref: "User", required: true },
-    pets: { type: Number },
+    // userId: { type: ObjectId, ref: "User", required: true },
+    pets: { type: Number, default: 0 },
     passes: { type: Number, default: 0 },
   },
   { timestamps: true, toJSON: { virtuals: true } }
