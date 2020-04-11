@@ -10,7 +10,6 @@ export class CommentsController extends BaseController {
       .get("", this.getAll)
       .get("/:Id", this.getById)
       // .get("", this.getByUserId)
-      // .get("", this.getByPostId)
       .put("/:Id", this.edit)
       .post("", this.create)
       .delete("/:Id", this.remove);
@@ -27,17 +26,7 @@ export class CommentsController extends BaseController {
   }
 
   // NOTE Revisit these, possibly
-  // async getByPostId(req, res, next) {
-  //   try {
-  //     let post = await commentsService.getByPostId(req.params.postId);
-  //     if (!post) {
-  //       throw new BadRequest("Id");
-  //     }
-  //     res.send(post);
-  //   } catch (error) {
-  //     next(error);
-  //   }
-  // }
+  
 
   // async getByUserId(req, res, next) {
   //   try {

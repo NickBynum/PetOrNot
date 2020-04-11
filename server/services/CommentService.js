@@ -2,11 +2,21 @@ import { dbContext } from "../db/DbContext";
 import { BadRequest } from "../utils/Errors";
 
 class CommentsService {
+  async getByPostId(postId) {
+    let post = await dbContext.Posts.find({_id: postId});
+    if (!post) {
+      throw new BadRequest("Invalid Id");
+    }
+    return post;
+  }
   async getAll(query = {}) {
     let comments = await dbContext.Comments.find(query);
     return comments;
   }
-
+  async getCommentsByPostId(postsssId) {
+    return await dbContext.Comments.find( {postId: postsssId});
+  }
+  
   // NOTE Revisit these possibly?
   // async getByPostId(postId) {
   //   let post = await dbContext.Posts.find({_id: postId});

@@ -2,6 +2,7 @@ import express from "express";
 import BaseController from "../utils/BaseController";
 import { postsService } from "../services/PostService";
 import { BadRequest } from "../utils/Errors";
+import { commentsService } from "../services/CommentService";
 
 export class PostsController extends BaseController {
   constructor() {
@@ -9,6 +10,7 @@ export class PostsController extends BaseController {
     this.router
       .get("", this.getAll)
       .get("/:Id", this.getById)
+      .get("/:Id/comments", this.getCommentsByPostId)
       .put("/:Id", this.edit)
       .post("", this.create)
       .delete("/:Id", this.remove);
@@ -21,6 +23,14 @@ export class PostsController extends BaseController {
       res.send(posts);
     } catch (error) {
       next(error);
+    }
+  }
+  async getCommentsByPostId(req, res, next) {
+    try {
+      let data = await commentsService.getCommentsByPostId(req.params.Id);
+      res.send(data);
+    } catch (error) {
+      next(error)
     }
   }
 

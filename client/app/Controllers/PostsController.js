@@ -1,22 +1,20 @@
 import postsService from "../Services/PostsServices.js";
 import store from "../store.js";
 
-let totalPoints = []
+let totalPoints = [];
 console.log("before", totalPoints);
 function _sortCard() {
-  
-  let posts = store.State.posts
-  posts.sort((a, b) => (b.pets - a.pets))
+  let posts = store.State.posts;
+  posts.sort((a, b) => b.pets - a.pets);
 }
 function _drawThumbnail() {
   let template = "";
   let posts = store.State.posts;
-  _sortCard()
+  let comments = store.State.comments;
+  _sortCard();
   posts.forEach((post) => (template += post.Template));
   document.getElementById("cards").innerHTML = template;
 }
-function _drawDetails() { }
-
 
 export default class PostsController {
   addPost(event) {
@@ -33,7 +31,7 @@ export default class PostsController {
     console.log("postObject", newPostObject);
     form.reset();
   }
-
+  getCommentsByPostId() {}
   pet(postId) {
     postsService.pet(postId);
   }

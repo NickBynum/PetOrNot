@@ -14,6 +14,7 @@ class PostsService {
       store.commit("posts", posts);
     });
   }
+
   async addPost(newPostObject) {
     console.log(newPostObject);
     try {
