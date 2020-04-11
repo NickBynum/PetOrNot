@@ -1,1 +1,34 @@
 /* Styles */
+.dark-blue {
+  background-color: #254E70;
+}
+
+.purple {
+  background-color: #401F3E;
+}
+
+.light-blue {
+  background-color: #37718E;
+}
+
+.dark-grey {
+  background-color: #738290;
+}
+
+.off-white {
+  background-color: #F3F3F6;
+}
+
+.navbar {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.container-fluid {
+  background-color: #B2BAC2 ;
+}
+
+.card-img-top {
+  /* may need to have css to force image to cover etc. */
+}
+
