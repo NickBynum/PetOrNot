@@ -9,7 +9,7 @@ export default class Comment {
 
     return /*html*/` 
 
-  <li class="list-group-item"><strong>${this.petName}</strong>: ${this.comment}</li>
+  <li class="list-group-item">${this.comment}</li>
   `
   }
 }

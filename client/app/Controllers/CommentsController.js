@@ -3,13 +3,26 @@ import store from "../store.js"
 
 
 function _commentDraw() {
-
+  let template = "";
+  let comments = store.State.comments;
+  comments.forEach((comment) => (template += comment.Template));
+  document.getElementById("comments").innerHTML = template;
 }
 
 export default class CommentsController {
 
-  add
+  comment(postId, event) {
+  event.preventDefault();
+  let form = event.target;
+  let newCommentObject = {
+    postId: postId,
+    comment: form.comment.value,
+  };
 
+  commentsService.comment(newCommentObject);
+  console.log("commentObject", newCommentObject);
+  form.reset();
+}
 
 
 

@@ -25,10 +25,10 @@ export default class Post {
                     class="btn  light-blue text-light">Pet</button><button onclick="app.postsController.pass('${this.postId}')" class="btn  purple text-light ">Pass</button>
             </div>
 
-            <form onsubmit="xxxxxxx">
+            <form onsubmit="app.commentsController.comment('${this.postId}', event)">
                 <div class="form-group pt-3">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"
-                        placeholder="Add a comment..."></textarea>
+                    <input type="text" class="form-control" name="comment" id="exampleFormControlTextarea1" rows="2"
+                        placeholder="Add a comment..."/>
                 </div>
             </form>
             <ul id="comments" class="list-group"></ul>

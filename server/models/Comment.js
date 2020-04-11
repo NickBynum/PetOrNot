@@ -5,7 +5,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 const Comment = new Schema(
   {
     comment: { type: String, required: true },
-    userId: { type: ObjectId, ref: "User", required: true },
+    userId: { type: ObjectId, ref: "User", required: false },
     postId: { type: ObjectId, ref: "Post", required: true },
     // Possibly add Upovtes/Downvotes
   },
