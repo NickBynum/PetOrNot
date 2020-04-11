@@ -1,14 +1,22 @@
 import postsService from "../Services/PostsServices.js";
 import store from "../store.js";
 
+let totalPoints = []
+console.log("before", totalPoints);
+function _sortCard() {
+  
+  let posts = store.State.posts
+  posts.sort((a, b) => (b.pets - a.pets))
+}
 function _drawThumbnail() {
   let template = "";
   let posts = store.State.posts;
-
+  _sortCard()
   posts.forEach((post) => (template += post.Template));
-  document.getElementById("display").innerHTML = template;
+  document.getElementById("cards").innerHTML = template;
 }
-function _drawDetails() {}
+function _drawDetails() { }
+
 
 export default class PostsController {
   addPost(event) {

@@ -13,18 +13,18 @@
 
 <body class="container-fluid">
 
-        <nav class="navbar dark-blue ">
-                <a class="navbar-brand" href="#">
-                    <img src="./assets/pet-friendly.png"
-                    width="40" height="40" alt=""></img></a> 
-                <div><button class="btn btn-sm light-blue text-light ml-auto" type="button" data-toggle="modal" data-target="#add-pet-modal">Post Your Pet</button></div>
-        </nav>
+    <nav class="navbar dark-blue ">
+        <a class="navbar-brand" href="#">
+            <img src="./assets/pet-friendly.png" width="40" height="40" alt=""></img></a> 
+        <div><button class="btn btn-sm light-blue text-light ml-auto" type="button" data-toggle="modal"
+                data-target="#add-pet-modal">Post Your Pet</button></div>
+    </nav>
 
 
 
-        <div class="row ">
-            <div class="col-12">
-                
+    <div class="row ">
+        <div class="col-12">
+
         </div>
     </div>
 
@@ -32,8 +32,8 @@
 
 
     <!-- add pet modal -->
-    <div class="col-12  modal fade border border-dark dark-grey rounded shadow mx-auto " id="add-pet-modal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
-        aria-hidden="true">
+    <div class="col-12  modal fade border border-dark dark-grey rounded shadow mx-auto " id="add-pet-modal"
+        tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -42,75 +42,39 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                    <div class="modal-body">
-            <form onsubmit="app.postsController.addPet(event)">
-                <div class="form-group">
-                    <input type="text" name="title" class="form-control" placeholder="Enter Title">
-                </div>
-                <div class="form-group">
-                    <input type="text" name="petName" class="form-control" placeholder="Enter Pet Name">
-                </div>
-                <div class="form-group">
-                    <input type="text" name="description" class="form-control" placeholder="Enter Winning Caption">
-                </div>
-                <div class="form-group">
-                    <input type="text" name="imgUrl" class="form-control" placeholder="Enter Pet Pic Url">
-                </div>
-                <button type="submit" class="btn light-blue text-light  mb-2">Submit</button>
-            </form>
-        </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-        <!-- Output that includes all comments -->
-        <!-- This is the card output -->
-        <div class="row" id="cards">
-
-
-            <!-- template to be pulled out -->
-            <div class="m-auto col-12 col-md-6 py-2">
-                <div id="petCardOutput" class="card border-dark rounded shadow mx-2 my-2">
-                    <img src="https://cdn.mos.cms.futurecdn.net/BwL2586BtvBPywasXXtzwA-320-80.jpeg" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body rounded off-white">
-                        <h3 class="card-text">Cats rule, dogs drool</h3>
-                        <h5 class="card-text">${this.description}</h5>
-                        <h6 class="card-text text-center">${this.pets} Pets & ${this.passes} Passes</h6>
-                        <div class="justify-content-center d-flex btn-group"><button class="btn  light-blue text-light">Pet</button><button class="btn  purple text-light ">Pass</button></div>
-
-                        <form onsubmit="xxxxxxx">
-                            <div class="form-group pt-3">
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Add a comment..."></textarea>
-                            </div>
-                          </form>
-
-                          ${this.CommentTemplate()}
-                        <!-- this will need to be a second template, only draws if there is a comment. Comments need to be in an unordered list -->
-
-
-
-                        <!-- this needs to be in the second template -->
-                        <ul class="list-group">
-                            <li class="list-group-item"><strong>${this.user}</strong>: ${this.comment}</li>
-                            <li class="list-group-item">User: Example comment</li>
-                          </ul>
-
-
-
-                        
-                    </div>
-
-
+                <div class="modal-body">
+                    <form onsubmit="app.postsController.addPet(event)">
+                        <div class="form-group">
+                            <input type="text" name="title" class="form-control" placeholder="Enter Title">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="petName" class="form-control" placeholder="Enter Pet Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="description" class="form-control"
+                                placeholder="Enter Winning Caption">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="imgUrl" class="form-control" placeholder="Enter Pet Pic Url">
+                        </div>
+                        <button type="submit" class="btn light-blue text-light  mb-2">Submit</button>
+                    </form>
                 </div>
             </div>
+        </div>
+    </div>
 
 
 
 
+
+    <!-- Output that includes all comments -->
+    <!-- This is the card output -->
+    <div class="row" id="cards">
+
+
+        <!-- template to be pulled out -->
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS, then Axios -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -124,7 +88,6 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/app/main.js" type="module"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 
 </html>

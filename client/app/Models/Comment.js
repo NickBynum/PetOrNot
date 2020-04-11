@@ -1,12 +1,15 @@
 export default class Comment {
-constructor () {
-  
-}
+  constructor(data) {
+    this.comment = data.comment
+    this.userId = data.userId
+    this.postId = data.postId
+  }
 
+  get Template() {
 
+    return /*html*/` 
 
-
-  get Template () {
-    return
+  <li class="list-group-item"><strong>${this.petName}</strong>: ${this.comment}</li>
+  `
   }
 }
