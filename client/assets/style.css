@@ -23,7 +23,12 @@
   margin-right: -15px;
   margin-left: -15px;
 }
+
 .container-fluid {
   background-color: #B2BAC2 ;
+}
+
+.card-img-top {
+  /* may need to have css to force image to cover etc. */
 }
 
