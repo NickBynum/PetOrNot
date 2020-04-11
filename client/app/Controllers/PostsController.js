@@ -6,7 +6,7 @@ function _drawThumbnail() {
   let posts = store.State.posts;
 
   posts.forEach((post) => (template += post.Template));
-  document.getElementById("thumb-display").innerHTML = template;
+  document.getElementById("display").innerHTML = template;
 }
 function _drawDetails() {}
 
@@ -26,7 +26,12 @@ export default class PostsController {
     form.reset();
   }
 
-  showDetail() {}
+  pet(postId) {
+    postsService.pet(postId);
+  }
+  pass(postId) {
+    postsService.pass(postId);
+  }
 
   constructor() {
     store.subscribe("posts", _drawThumbnail);

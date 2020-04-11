@@ -1,11 +1,12 @@
 export default class Post {
   constructor(data) {
+    this.postId = data._id;
     this.title = data.title; // Thumbnail & Detailed Post
     this.imgUrl = data.imgUrl; // Thumbnail & Detailed Post
     this.id = data.id; // Do not display
     this.petName = data.petName; // Thumbnail & Detailed Post
-    this.pet = data.pet; // Detailed view only
-    this.pass = data.pass; // Detailed view only
+    this.pets = data.pets || 0; // Detailed view only
+    this.passes = data.passes || 0; // Detailed view only
     this.description = data.description; // Detailed view only
     this.userId = data.userId || "";
   }
@@ -21,7 +22,7 @@ export default class Post {
     <p>${this.petName}</p>
     <p>${this.title}</p>
       <p>${this.description}</p>
-      <span class="d-flex justify-content-around"><button class="btn btn-success">Pet</button><button class="btn btn-danger">Pass</button></span>
+      <span class="d-flex justify-content-around"><button class="btn btn-success" onclick="app.postsController.pet('${this.postId}')">Pet ${this.pets}</button><button class="btn btn-danger" onclick="app.postsController.pass('${this.postId}')">Pass ${this.passes}</button></span>
     </div>
     
       `;

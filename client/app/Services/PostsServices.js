@@ -21,9 +21,33 @@ class PostsService {
       let newPost = new Post(newPostObject);
       let posts = [newPost, ...store.State.posts];
       store.commit("posts", posts);
-      // this.getPosts();
     } catch (error) {
       console.error(error);
+    }
+  }
+  async pet(postId) {
+    let foundPost = store.State.posts.find((post) => post.id == postId);
+    if (foundPost) {
+      foundPost.pets++;
+      try {
+        await _api.put(postId, foundPost);
+        this.getPosts();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }
+
+  async pass(postId) {
+    let foundPost = store.State.posts.find((post) => post.id == postId);
+    if (foundPost) {
+      foundPost.passes++;
+      try {
+        await _api.put(postId, foundPost);
+        this.getPosts();
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
 
