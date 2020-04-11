@@ -31,7 +31,9 @@ export default class Post {
                         placeholder="Add a comment..."/>
                 </div>
             </form>
-            <ul id="comments" class="list-group"></ul>
+            <button class="dark-blue text-light" onclick="app.commentsController.showPostComments('${this.postId}')">View Comments</button>
+            <button class="purple text-light" onclick="app.commentsController.hidePostComments('${this.postId}')">Hide Comments</button>
+            <ul id="comments-${this.postId}" class="list-group"></ul>
             <!-- this will need to be a second template, only draws if there is a comment. Comments need to be in an unordered list -->
 
 

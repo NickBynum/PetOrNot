@@ -10,11 +10,11 @@ function _sortCard() {
 function _drawThumbnail() {
   let template = "";
   let posts = store.State.posts;
+  let comments = store.State.comments;
   _sortCard();
   posts.forEach((post) => (template += post.Template));
   document.getElementById("cards").innerHTML = template;
 }
-function _drawDetails() {}
 
 export default class PostsController {
   addPost(event) {

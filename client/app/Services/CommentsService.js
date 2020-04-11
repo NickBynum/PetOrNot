@@ -8,6 +8,16 @@ const _api = axios.create({
 });
 
 class CommentsService {
+  getCommentsByPostId(postId) {
+    _api.get(postId + "/comments").then((res) => {
+      console.log("comments", res);
+      store.commit("messages", res);
+      let comments = res.data.map(
+        (rawCommentData) => new Comment(rawCommentData)
+      );
+      store.commit("comments", comments);
+    });
+  }
   getComments() {
     _api.get().then((res) => {
       console.log("results", res.data);
